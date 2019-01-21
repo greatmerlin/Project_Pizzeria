@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <!-- setting the viewport for responsive WEB Design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Baxevanos Theologos">
+    <title>Tony´s Pizza Factory_Homepage</title>
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens copy from W3C-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style_sheet_pizza.css">
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+    <script type="text/javascript" src="js/feedbackValidation.js"></script>
+    <script type="text/javascript" src="js/pizzafactory_script.js"></script>
+    <script type="text/javascript" src="js/getRequest.js"></script>
+    <script type="text/javascript" src="js/postRequests.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery.validarium.js"></script>
+    <style type="text/css">
+        label {
+            display: block;
+        }
+
+        .valid {
+            border: 1px solid green;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+
+        .validarium-error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body class="Site-content">
+<header>
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Tony's Pizza Factory</a>
+        <a href="pizzas.html" class="pizza">Pizza</a>
+        <a href="salads.html" class="salad">Salad</a>
+        <a href="softdrinks.html" class="softdrink">Softdrinks</a>
+        <a href="feedback.html" class="feedback">Feedback</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+</header>
+<div id="statisticContainer" class="invisible">
+    <h1>Grazie! Check out our overall pizza rating</h1>
+    <div class="pieContainer" id="pieContainer0"></div>
+    <div class="pieContainer" id="pieContainer1"></div>
+    <div class="pieContainer" id="pieContainer2"></div>
+</div>
+<div id="mainContainer" class="">
+    <h1>Tell us what you think</h1>
+    <div class="formContainer">
+        <form method="POST" onsubmit="submitFeedback()" target="dummyframe">
+            <fieldset>
+                <div class="colLeft">
+                    <span class="formLabel">How do you like our pizza?&#42;</span>
+                </div>
+                <div class="colRight">
+							<span>
+								<label class="noBreak"><input type="radio" name="ratingTaste" value="awesome" checked>Awesome</label>
+								<label class="noBreak"><input type="radio" name="ratingTaste" value="good">Good</label>
+								<label class="noBreak"><input type="radio" name="ratingTaste" value="okay">Okay</label>
+								<label class="noBreak"><input type="radio" name="ratingTaste" value="poor">Poor</label>
+							</span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="colLeft">
+                    <span class="formLabel">What do you think about our prizes?&#42;</span>
+                </div>
+                <div class="colRight">
+							<span>
+								<label class="noBreak"><input type="radio" name="ratingPrice" value="fair" checked>Fair</label>
+								<label class="noBreak"><input type="radio" name="ratingPrice" value="okay">Okay</label>
+								<label class="noBreak"><input type="radio" name="ratingPrice" value="expensive">Expensive</label>
+							</span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="colLeft">
+                    <label class="formLabel" for="name">Your name?&#42;</label>
+                </div>
+                <div class="colRight" id="nameDiv">
+                    <input type="text" name="fullname" id="name" onblur="validateName(this);">
+                    <p class="inputError invisible">Your entry <span></span> is not valid!</p>
+                </div>
+                <div class="colLeft">
+                    <label class="formLabel" for="email">Your e-mail address?&#42;</label>
+                </div>
+                <div class="colRight" id="emailDiv">
+                    <input type="email" name="email" id="email" onblur="validateEmail(this);">
+                    <p class="inputError invisible">Your entry <span></span> is not a valid email address!</p>
+                </div>
+                <div class="colLeft">
+                    <label class="formLabel" for="text">What can we do better?&#42;<br></label>
+                </div>
+                <div class="colRight" id="textDiv">
+                    <textarea name="text" id="text" rows="6" placeholder="Please enter at least 50 characters." onblur="validateText(this);"></textarea>
+                    <p class="inputError invisible">Your entry <span></span> is not valid!</p>
+                </div>
+                <div class="colLeft">
+
+                </div>
+                <div class="colRight">
+                    <input id="submitButton" type="submit" value="Send" disabled>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+</div>
+<div id="feedbackError" class="feedbackError invisible" onclick="goAway(this.id)">
+    Sorry, we had a problem processing your feedback!
+</div>
+    <script type="text/javascript">
+        $('form#demo').validarium();
+    </script>
+<footer>
+    <div class="hoursBox">
+        <div class="hours">
+            Hours:<br>
+            Mon-Thu: 11 a.m. - 23 p.m.<br>
+            Fri-Sat: 11 a.m. - 24 p.m.<br>
+            Sunday Closed
+        </div>
+    </div>
+    <div class="commentBox">
+        <div class="comment">
+            <em>The Pizzeria is one place I have been<br>
+                wanting to visit for a long time. The<br>
+                reason being their Rustica pizza which<br>
+                absolutely blew me away"</em> - Jimmy
+        </div>
+    </div>
+    <div class="addressBox">
+        <div class="address">
+            Address:<br>
+            Tony´s Pizza Factory<br>
+            2122 N Clark St<br>
+            Chicago, IL 60614, USA
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

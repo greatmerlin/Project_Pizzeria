@@ -1,0 +1,517 @@
+/* The nav style -------------------------------------------------------------------------------------------------*/
+
+    /*Make sure that the padding and border are included in the total width and height of the elements*/
+* {
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+/* Add a blue background color to the top navigation */
+.topnav {
+    background-color: cornflowerblue;
+    overflow: hidden;
+    border-style: outset;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover (hover=user action pseudo-class--> applies when the
+   mousepointer is over the element */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+/* Now below the nav ---------------------------------------------------------------------------------------------- */
+
+/* All pages: The title in every page (for example the text over the pizza image) */
+
+.h1Title {
+    font-family: cursive;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    overflow: auto;
+    border-style: initial;
+}
+
+/* Index.html page: the pizza image */
+
+#mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+.invisible{
+    visibility: hidden!important;
+    height: 0!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+#mainContainer, #statisticContainer{
+    float: left;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+/* Index: the three images under the pizza image in index -----------------------------------------------------------*/
+
+.leImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+/* Index: Hypertext on the images in index -------------------------------------------------------------------------*/
+
+a {
+    position: relative;
+    display: inline-block;
+}
+
+a span {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    color: white;
+    font-size: 230%;
+}
+
+/* itemLayer for pizzas, salads, softdrinks pages--------------------------------------------------------------------------*/
+
+#itemLayer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.itemBox{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    width: 21em;
+    padding: 1em;
+}
+
+.itemImage{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 14em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.itemDescriptionBox{
+    width: 100%;
+    float: left;
+}
+
+.itemName{
+    width: 65%;
+    font-weight: bold;
+    float: left;
+    font-size: 11pt;
+    padding-top: 5px;
+    margin-top: 0.5em;
+}
+
+.itemPrice{
+    width: 20%;
+    float: right;
+    font-size: 10pt;
+    padding-top: 5px;
+    margin-top: 0.5em;
+}
+
+.itemCart{
+    float: right;
+    margin-left: 2px;
+}
+
+.itemContent{
+    width: 100%;
+    font-size: 8pt;
+    float: left;
+    padding-top: 5px;
+}
+
+.selectAddition{
+    width: 60%;
+    font-weight: bold;
+    float: left;
+    font-size: 10pt;
+    padding-top: 5px;
+}
+
+/* error handler -----------------------------------------------------------------------------------------------------*/
+
+.inputError{
+    font-size: 0.8em;
+    color: red;
+    margin: 0.5em;
+}
+
+.overlayThanks, .errorBox, .feedbackError{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ee1409;
+    border-radius: 0.5em;
+    top: 50%;
+    left: 50%;
+    width: 14em;
+    height: 3em;
+    transform: translate(-50%, -60%);
+    color: #ee1409;
+    background-color: #6bdaf2;
+    font-weight: bold;
+    text-shadow: 0 0 .9em white;
+}
+
+.feedbackError{
+    border: 2px solid red!important;
+    color: red!important;
+    background-color: #6bdaf2!important;
+    width: 28em!important;
+}
+
+.errorBox{
+    border: 2px solid red!important;
+    color: red!important;
+    background-color: #6bdaf2!important;
+}
+
+.overlayThanks:hover{
+    background-color: white;
+}
+
+.errorBox:hover{
+    background-color: white!important;
+}
+
+.feedbackError:hover{
+    background-color: white!important;
+}
+
+/* This is the footer ------------------------------------------------------------------------------------------------*/
+
+footer {
+
+    background-color: #6495ED;
+    font-size: 0.8em;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 80px;
+    border-style: groove;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.hoursBox, .commentBox, .addressBox{
+
+    width:33%;
+    margin: auto;
+}
+
+.hours, .comment, .adress {
+
+    padding-left: 1em;
+    padding-right: 1em;
+
+}
+
+/*when the screen is less than 812 pixels wide, reduce font size of footer and hide .comment -------------------------*/
+
+@media only screen and (max-width: 812px) {
+
+    .address, .hours, .comment{
+        font-size: 0.7em;
+    }
+}
+
+
+
+
+/* When the screen is less than 600 pixels wide, hide all links as well as footer comment& address except
+for the first one ("Home") and "(hours).
+how the link that contains should open and close the topnav (.icon) --------------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .hours {
+        width: 95%;
+        padding-left: 2em;
+        font-size: 0.5em;
+
+    }
+
+    .comment {
+        display: none;
+    }
+
+    .address {
+        display: none;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+This class makes the topnav look good on small screens (display the links vertically instead of horizontally)-------- */
+@media only screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+/* Feedback type-Fields ,Full-width input fields -------------------------------------------------------------------  */
+
+input[type=text] {
+    width: 100%;
+    display: inline-block;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit button--------------------------------------------------------------------------------- */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* so that the footer wont hide things in Mobile devices. i also removed
+the position:fixed; from footer. works like a charm!------------------------------------------------------------------*/
+
+
+.Site-content {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* for pieChart and feedback page------------------------------------------------------------------------------------------*/
+
+.formContainer, .pieContainer{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+}
+
+.pieContainer{
+    display: flex;
+    align-items: center;
+    width: 35em;
+}
+
+#chartContainer0, #chartContainer1, #chartContainer2{
+    width: 100%;
+}
+
+svg{
+    overflow:visible!important;
+}
+
+#pieContainer0{
+    margin-top: 0;
+    width: 35em!important;
+    height: auto!important;
+    overflow: visible;
+}
+
+#pieContainer1, #pieContainer2{
+    margin-top: -50px;
+    width: 0!important;
+    height: 0!important;
+    overflow: hidden;
+}
+
+fieldset{
+    border: none;
+}
+
+.colLeft{
+    float: left;
+    width: 40%;
+    margin-top: 12px;
+}
+
+.colRight{
+    float: left;
+    width: 50%;
+    margin-top: 12px;
+    margin-left: 5%;
+}
+
+.formLabel{
+    float: right;
+}
+
+.noBreak{
+    display: inline-block;
+}
+
+input[type=name], input[type=email], input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+    display: block;
+}
+
+input[type=name]:focus, input[type=email]:focus, input[type=text]:focus, select:focus, textarea:focus{
+    box-shadow: 0 0 5px #f6ddcc;
+    border: 1px solid #edbb99;
+}
+
+input[type="radio"]{
+    margin: 4px 4px 0 12px;
+    cursor: pointer;
+}
+
+input[type=submit]{
+    background-color: white;
+    box-shadow: 0 0 .1em #f6ddcc;
+    margin-top: -0.3em;
+    cursor: pointer;
+    display: table-cell;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border-width: 2px;
+    float: right;
+    font-weight: bold;
+}
+
+input[type=submit]:hover{
+    color: #6e2c00;
+}
+
+input[type=submit]:focus{
+    outline: 1px solid #f6ddcc;
+}
+
+input[type=submit]:active{
+    color: #6e2c00;
+}
+
+#submitButton{
+    cursor: pointer;
+}
+
+.selectAddition > select{
+    margin-top: 0.3em;
+    padding: 2px;
+}
+
+button{
+    background-color: white;
+    padding: 2px 10px;
+    box-shadow: 0 0 .1em #f6ddcc;
+    margin-top: -0.3em;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #6e2c00;
+}
+
+button:focus{
+    outline: 1px solid #f6ddcc;
+}
+
+button:active{
+    color: #6e2c00;
+}
